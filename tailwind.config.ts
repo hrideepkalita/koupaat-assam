@@ -14,6 +14,14 @@ export default {
     },
     extend: {
       colors: {
+        brand: {
+          yellow: "hsl(var(--brand-yellow))",
+          "yellow-deep": "hsl(var(--brand-yellow-deep))",
+          red: "hsl(var(--brand-red))",
+          "red-deep": "hsl(var(--brand-red-deep))",
+          cream: "hsl(var(--brand-cream))",
+          ink: "hsl(var(--brand-ink))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
