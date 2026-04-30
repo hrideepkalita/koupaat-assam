@@ -2,7 +2,9 @@ import { MapPin, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { useSettings } from "@/hooks/useMenuData";
 
-export const Footer = () => (
+export const Footer = () => {
+  const { whatsapp } = useSettings();
+  return (
   <footer className="bg-brand-ink text-brand-cream pt-14 pb-6">
     <div className="container grid md:grid-cols-3 gap-10">
       <div>
