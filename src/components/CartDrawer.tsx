@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Minus, Plus, Trash2, X, MessageCircle } from "lucide-react";
 import { useCart } from "@/store/cart";
-import { WHATSAPP_NUMBER } from "@/data/menu";
+import { useSettings } from "@/hooks/useMenuData";
 import { toast } from "sonner";
 
 export const CartDrawer = () => {
   const { items, open, setOpen, inc, dec, remove, total, clear } = useCart();
+  const { whatsapp, template } = useSettings();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
@@ -18,12 +19,12 @@ export const CartDrawer = () => {
     }
     const lines = items.map((i) => `${i.qty}x ${i.name} — ₹${i.price * i.qty}`).join("%0A");
     const msg =
-      `Hello Koupaat, I want to order:%0A%0A${lines}%0A%0A` +
+      `${encodeURIComponent(template)}%0A%0A${lines}%0A%0A` +
       `Total: ₹${total()}%0A%0A` +
       `Name: ${encodeURIComponent(name)}%0A` +
       `Phone: ${encodeURIComponent(phone)}%0A` +
       `Address: ${encodeURIComponent(address)}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+    window.open(`https://wa.me/${whatsapp}?text=${msg}`, "_blank");
     toast.success("Opening WhatsApp...");
   };
 

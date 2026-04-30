@@ -1,6 +1,6 @@
 import { MapPin, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
-import { WHATSAPP_NUMBER } from "@/data/menu";
+import { useSettings } from "@/hooks/useMenuData";
 
 export const Footer = () => (
   <footer className="bg-brand-ink text-brand-cream pt-14 pb-6">
