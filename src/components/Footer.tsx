@@ -30,7 +30,7 @@ export const Footer = () => (
           </li>
           <li className="flex gap-2">
             <Phone className="w-4 h-4 mt-0.5 shrink-0" />
-            +91 99999 99999
+            +91 88228 21202
           </li>
         </ul>
       </div>

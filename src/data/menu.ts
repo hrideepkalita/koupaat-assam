@@ -1,6 +1,6 @@
 import type { MenuItem } from "@/store/cart";
 
-export const WHATSAPP_NUMBER = "919999999999"; // TODO: replace with owner's number (with country code, no +)
+export const WHATSAPP_NUMBER = "918822821202"; // Owner's WhatsApp (country code, no +)
 
 export const menuItems: MenuItem[] = [
   // Thali
