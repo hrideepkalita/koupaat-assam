@@ -1,8 +1,10 @@
 import { MapPin, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
-import { WHATSAPP_NUMBER } from "@/data/menu";
+import { useSettings } from "@/hooks/useMenuData";
 
-export const Footer = () => (
+export const Footer = () => {
+  const { whatsapp } = useSettings();
+  return (
   <footer className="bg-brand-ink text-brand-cream pt-14 pb-6">
     <div className="container grid md:grid-cols-3 gap-10">
       <div>
@@ -42,7 +44,7 @@ export const Footer = () => (
           <li><a href="#about" className="hover:text-brand-yellow transition-smooth">About</a></li>
         </ul>
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+          href={`https://wa.me/${whatsapp}`}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 mt-4 bg-[#25D366] text-white px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-smooth"
@@ -56,4 +58,5 @@ export const Footer = () => (
       © {new Date().getFullYear()} Koupaat. Crafted with love in Guwahati.
     </div>
   </footer>
-);
+  );
+};
